@@ -5,11 +5,12 @@
             "name": "Launch Chrome against localhost, with sourcemaps",
             "type": "chrome",
             "request": "launch",
-            "url": "http://localhost:4200/",
+            "url": "http://localhost:4200",
             "sourceMaps": true,
-            "webRoot": "${workspaceRoot}",
+            "diagnosticLogging": true,
+            "webRoot": "${workspaceRoot}\\dist",
             "sourceMapPathOverrides": {
-                "webpack:///*": "/*"
+                "webpack:///C:*":"C:/*"
             }
         },
         {
@@ -18,11 +19,10 @@
             "request": "attach",
             "port": 9222,
             "sourceMaps": true,
-            /*"diagnosticLogging": true,*/
-            "webRoot": "${workspaceRoot}",
-            "url": "http://localhost:4200/*",
+            "diagnosticLogging": true,
+            "webRoot": "${workspaceRoot}/src/app",
             "sourceMapPathOverrides": {
-                "webpack:///*": "/*"
+                "webpack:///C:*":"C:/*"
             }
         }
     ]

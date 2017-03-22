@@ -1,0 +1,7 @@
+<p>
+  The product list contains : {{ productList.length }}
+</p>
+
+<div *ngFor="let product of productList">
+  <app-product [product]="product" (putRingOnIt)="ringWasPlaced($event)"></app-product>
+</div>
