@@ -9,15 +9,17 @@ import { ProductDTO } from "app/DTO/product";
 })
 export class ProductsListComponent implements OnInit {
   productList: ProductDTO[];
+  messages: string[];
 
   constructor() {
+    this.messages = new Array<string>();
   }
 
   ngOnInit() {
   }
 
   ringWasPlaced(message: string) {
-    console.log("Put your hands up" + message);
+      this.messages.push("Product clicked: " + message);
   }
 
 }

@@ -5,3 +5,11 @@
 <div *ngFor="let product of productList">
   <app-product [product]="product" (putRingOnIt)="ringWasPlaced($event)"></app-product>
 </div>
+
+<table style="width:100%">
+<tr *ngFor="let message of messages">
+  <td>
+    {{message}}
+  </td>
+</tr>
+</table>
