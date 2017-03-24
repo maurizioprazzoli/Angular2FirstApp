@@ -5,25 +5,23 @@ import { ProductDTO } from "app/DTO/product";
 @Component({
   selector: 'app-product',
   inputs: ['product'],
-  outputs: ['putRingOnIt'],
+  outputs: ['productRemovedEvent'],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-  putRingOnIt: EventEmitter<string>;
+  productRemovedEvent: EventEmitter<ProductDTO>;
   product: ProductDTO;
 
   constructor() {
-    this.putRingOnIt = new EventEmitter<string>();
+    this.productRemovedEvent = new EventEmitter<ProductDTO>();
   }
 
   ngOnInit() {
   }
 
-  OnRemovedClicked(): void
-  {
-    console.log(this.product.Name);
-    this.putRingOnIt.emit(this.product.Name);
+  OnRemovedClicked(): void {
+    this.productRemovedEvent.emit(this.product);
   }
 
 }
