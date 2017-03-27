@@ -9,9 +9,12 @@ import { ProductDTO } from "app/DTO/product";
 })
 export class ProductInsertionComponent implements OnInit {
   productAddedEvent: EventEmitter<ProductDTO>;
-
-  constructor() {
+  
+  constructor(fb: FormBuilder) {
     this.productAddedEvent = new EventEmitter<ProductDTO>();
+     var myForm = fb.group({
+      'sku': ['123456']
+    });
   }
 
   ngOnInit() {
