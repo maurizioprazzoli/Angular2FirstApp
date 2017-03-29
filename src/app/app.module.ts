@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { ProductImageComponent } from './product-image/product-image.component';
 import { TestComponent } from './test/test.component';
 import { ProductInsertionComponent } from './product-insertion/product-insertion.component';
+import { YoutubeSearchComponent } from './youtube-search/youtube-search.component';
 
 @NgModule({
   declarations: [
@@ -18,14 +19,15 @@ import { ProductInsertionComponent } from './product-insertion/product-insertion
     ProductImageComponent,
     TestComponent,
     ProductInsertionComponent,
+    YoutubeSearchComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    FormBuilder,
-    FormGroup,
+    // FormBuilder,
+    // FormGroup,
   ],
   providers: [],
   bootstrap: [AppComponent]
