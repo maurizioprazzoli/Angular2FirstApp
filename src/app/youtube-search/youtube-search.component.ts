@@ -39,8 +39,10 @@ export class YoutubeSearchComponent implements OnInit {
   constructor(http: Http) {
     this.http = http;
 
+    console.log("** searchResults **");
     var searchResults = this.search("car");
     console.log(searchResults);
+    console.log("****");
   }
 
   makeRequest(): void {
@@ -64,9 +66,16 @@ export class YoutubeSearchComponent implements OnInit {
       `maxResults=10`
     ].join('&');
     let queryUrl: string = `${this.YOUTUBE_API_URL}?${params}`;
-    var response = this.http.get(queryUrl)
-                            .map((response: Response) => console.log(response));
-    
+    console.log(queryUrl);
+
+    //this.http.get(queryUrl).subscribe();
+
+    this.http.get(queryUrl).map(this.test).forEach(a => null);
+
+
+
+    //.map((response: Response) => console.log(response));
+
     return null;
     // return this.http.get(queryUrl)
     //   .map((response: Response) => {
@@ -82,6 +91,9 @@ export class YoutubeSearchComponent implements OnInit {
     //   });
   }
 
-
-
+  private test(_response: Response, index: number) {
+    console.log("****");
+    console.log((_response.json()).items);
+    console.log("****");
+  }
 }
